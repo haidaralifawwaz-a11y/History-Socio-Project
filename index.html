@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HISTORY SOCIOOOOOOO</title>
-
-    <!-- Google Fonts -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
+        .image-box img {
+        width: 100%;
+        max-width: 400px;         
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        pointer-events: none; /* ensures it’s not clickable */
+        }
+
+        .image-box:hover img {
+        transform: scale(1.03); 
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
         body {
             font-family: 'Lora', serif;
             margin: 10px;
             position: relative;
 
-            background: url('https://i.ibb.co/qYXtqV81/unnamed-3.jpg') no-repeat center center fixed;
+            background: url('https://i.ibb.co.com/qYXtqV81/unnamed-3.jpg') no-repeat center center fixed;
             background-size: cover;
         }
 
+        /* Make content readable over the background */
         .content-wrapper {
             backdrop-filter: blur(6px);
             background: rgba(255, 255, 255, 0.45);
@@ -35,7 +48,7 @@
         }
 
         section {
-            margin: 40px;
+            margin: 40px 180px 60px 180px;
             margin-bottom: 40px;
             padding: 20px;
             border-radius: 40px;
@@ -70,23 +83,76 @@
         </header>
 
         <section id="info">
-            <h2>Information</h2>
+           
             <p>
-                This page contains a short overview about the topic shown above.  
-                The purpose of this section is to give background explanations that  
-                help the reader understand what the images represent.
+                <a href="https://en.wikipedia.org/wiki/Colonialism" style="font-weight: bold; font-style: italic;" target="_blank">
+                    Colonialism
+                </a>
+                –
+                <a href="https://id.wikipedia.org/wiki/Undang-Undang_Agraria_1870" style="font-weight: bold; font-style: italic;" target="_blank">
+                    1870 Agrarian Law (Agrarische Wet)
+                </a>
+                &
+                <a href="https://id.wikipedia.org/wiki/Undang-Undang_Gula_1870" style="font-weight: bold; font-style: italic;" target="_blank">
+                    Suiker Wet
+                </a>
+                – many private firms (sugar, etc) – society adapts & new culture (<strong>Manten Tebu</strong>)
+                – shows colonialism influenced Indonesian social institutions by shaping the new
+                <a href="https://en.wikipedia.org/wiki/Tradition" style="font-weight: bold; font-style: italic;" target="_blank">
+                    tradition
+                </a>.
             </p>
+
+            
+            <h2>What is Manten Tebu?</h2>
+            <div class="image-box">
+                <img src="https://i.ibb.co.com/JW9CP5Jy/Whats-App-Image-2025-04-14-at-12-03-56-jpeg.webp" 
+                     alt="Whats-App-Image-2025-04-14-at-12-03-56-jpeg">
+            </div>
             <p>
-                The information presented here should be clear, simple, and  
-                easy to understand for anyone reading it.
+                The tradition of Manten Tebu is a ritual in which sugarcane stalks are symbolically married before the milling season, 
+                offering a compelling example of how societies respond to structural change by creating new cultural practices. 
+                Emerging during the colonial expansion of sugar plantations.
             </p>
+
+            <h2>What's the government's reaction to Manten Tebu?</h2>
+
+            <p>The government opened up plantation management rights to the private sector with the enactment of the Sugar Act (Suiker Wet) and the Agrarian Act (Agrarische Wet) in 1870, 
+                which caused European entrepreneurs began arriving in the Dutch East Indies to invest their capital, 
+                lease agricultural land from the local population for sugar cane plantations, and establish sugar factories.
+            </p>
+
+            <h2>Furthermore about Manten Tebu</h2>
+
+            <p>
+                In Java, manten tebu illustrates the dynamic relationship between imposed economic systems and the adaptive capacities of local social institutions. 
+                By analyzing this ritual through the sociological lenses of economic, religious, and family institutions, as well as functionalist, conflict, and interactionist perspectives, 
+                we can understand how new traditions form as a creative negotiation between external pressures and internal cultural continuity.
+            </p>
+            <div class="image-box">
+                <img src="https://i.ibb.co.com/RkDFCCPC/unnamed-6.jpg" 
+                     alt="unnamed-6.jpg">
+            </div>
+
+            <h2>The meaning behind Manten Tebu</h2>
+            <p>
+                The Manten Tebu ritual is a means of discipline, with the sugar factory owners wielding power and the sugar factory workers being disciplined. 
+                Through this ritual, workers are conditioned to work harder, and the harder they work, the more profit the sugar factory owners will make. 
+                Machines are a product of technological development that represent a new experience for the Javanese people. The presence of these machines sometimes causes fear among workers.
+                This is understandable, given that many factory machines are large and made of heavy metal, posing a high risk of accidents. 
+                Fear of these factory machines is still evident in the oral traditions that have developed in communities, especially those around sugar factories. 
+                In addition to stories, this fear of workplace accidents is also manifested in symbols, such as when a sugar cane bride, or Manten Tebu, is put into a milling machine as an offering so that the milling machine will not claim any human victims.
+            </p>
+            
         </section>
 
         <section id="pictures">
             <h2>Pictures</h2>
 
             <div class="image-container">
-                <img src="https://i.ibb.co/qYXtqV81/unnamed-3.jpg" alt="First Image">
+                <img src="https://i.ibb.co.com/qYXtqV81/unnamed-3.jpg" alt="First Image">
+                <img src="image2.jpg" alt="Second Image">
+                <img src="image3.jpg" alt="Third Image">
             </div>
         </section>
 
@@ -98,3 +164,5 @@
 
 </body>
 </html>
+
+
