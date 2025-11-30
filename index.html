@@ -4,165 +4,524 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HISTORY SOCIOOOOOOO</title>
-    
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        .image-box img {
-        width: 100%;
-        max-width: 400px;         
+   <style>
+    .ref-item {
+        margin: 12px 0;
+    }
+
+    .ref-preview {
+        position: relative;
+        display: inline-block;
+    }
+
+    .ref-preview a {
+        font-size: 1.05rem;
+        text-decoration: none;
+        color: #2a2a2a;
+        font-weight: 600;
+    }
+
+    .ref-preview a:hover {
+        text-decoration: underline;
+    }
+
+    .ref-box {
+        display: none;
+        position: absolute;
+        top: 28px;
+        left: 0;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 12px 15px;
+        border-radius: 12px;
+        width: 260px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        font-size: 13px;
+        z-index: 999;
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    .ref-preview:hover .ref-box {
+        display: block;
+    }
+
+    /* ==== GLOBAL PAGE STYLE ==== */
+    body {
+        font-family: 'Lora', serif;
+        margin: 0;
+        padding: 0;
+        background: url('https://i.ibb.co.com/qYXtqV81/unnamed-3.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #222;
+    }
+
+    /* Glass container */
+    .content-wrapper {
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.50);
+        margin: 25px auto;
+        padding: 35px;
+        border-radius: 28px;
+        width: 90%;
+        max-width: 1150px;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+    }
+
+    /* ==== TYPOGRAPHY ==== */
+    h1, h2, h3, h4 {
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 0.5px;
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 1.9rem;
+        font-weight: 600;
+        margin-top: 40px;
+    }
+
+    p {
+        line-height: 1.75;
+        font-size: 1.05rem;
+        margin: 15px 0;
+    }
+
+    /* Header */
+    header {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    /* ==== SECTIONS ==== */
+    section {
+        margin: 50px auto;
+        padding: 35px 40px;
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    }
+
+    /* ==== IMAGES ==== */
+    .image-box {
+        text-align: center;
+        margin: 25px 0;
+    }
+
+    .image-box img {
+        width: 85%;
+        max-width: 460px;
+        border-radius: 18px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        transition: transform 0.3s ease;
+    }
+
+    .image-box img:hover {
+        transform: scale(1.05);
+    }
+
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+        margin-top: 20px;
+    }
+
+    .image-container img {
+        width: 260px;
+        border-radius: 14px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+        transition: transform 0.25s ease;
+    }
+
+    .image-container img:hover {
+        transform: scale(1.06);
+    }
+
+    /* ==== LINK PREVIEW ==== */
+    .link-preview {
+        position: relative;
+        display: inline-block;
+    }
+
+    .link-preview .preview-box {
+        display: none;
+        position: absolute;
+        top: 28px;
+        left: 0;
+        padding: 12px 16px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+        width: 230px;
+        font-size: 13px;
+        animation: fadeIn 0.2s ease-out;
+        z-index: 100;
+    }
+
+    .link-preview:hover .preview-box {
+        display: block;
+    }
+
+    .link-preview a {
+        font-weight: bold;
+        font-style: italic;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .link-preview a:hover {
+        text-decoration: underline;
+    }
+
+    /* ==== FUNFACT LIST ==== */
+    /* Fix styling because user inserted <li> without <ul> */
+    section li {
+        text-align: left;
+        margin-bottom: 18px;
+        line-height: 1.7;
+        font-size: 1.05rem;
+        background: rgba(255, 255, 255, 0.45);
+        padding: 15px 20px;
         border-radius: 15px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        pointer-events: none; /* ensures it’s not clickable */
-        }
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        list-style: disc inside;
+    }
 
-        .image-box:hover img {
-        transform: scale(1.03); 
-        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-        }
-        body {
-            font-family: 'Lora', serif;
-            margin: 10px;
-            position: relative;
+    /* ==== FOOTER ==== */
+    footer {
+        margin-top: 40px;
+        text-align: center;
+        color: white;
+        text-shadow: 0 2px 7px rgba(0,0,0,0.9);
+        padding-bottom: 20px;
+    }
 
-            background: url('https://i.ibb.co.com/qYXtqV81/unnamed-3.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
+    /* Animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-        /* Make content readable over the background */
-        .content-wrapper {
-            backdrop-filter: blur(6px);
-            background: rgba(255, 255, 255, 0.45);
-            border-radius: 20px;
-            padding: 20px;
-        }
+    html {
+    scroll-behavior: smooth;
+    }
+    .cite {
+    color: #2a3da3;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    }
 
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-        }
+    .cite:hover {
+        text-decoration: underline;
+    }
 
-        header {
-            margin-bottom: 40px;
-            text-align: center;
-        }
 
-        section {
-            margin: 40px 180px 60px 180px;
-            margin-bottom: 40px;
-            padding: 20px;
-            border-radius: 40px;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
+    </style>>
 
-        footer {
-            text-align: center;
-            color: white;
-            text-shadow: 0 2px 4px black;
-        }
-
-        .image-container img {
-            width: 300px;
-            border-radius: 10px;
-            margin: 10px;
-        }
-    </style>
 </head>
 
 <body>
 
-    <div class="content-wrapper">
+<div class="content-wrapper">
 
-        <header>
-            <h1>Manten Tebu</h1>
-            <h3>Roots of the Myth</h3>
-            <h4>Hierarchy of "Industry"</h4>
-        </header>
+    <header>
+        <h1>Manten Tebu</h1>
+        <h3>Roots of the Myth</h3>
+        <h4>Hierarchy of "Industry"</h4>
+    </header>
 
-        <section id="info">
-           
-            <p>
-                <a href="https://en.wikipedia.org/wiki/Colonialism" style="font-weight: bold; font-style: italic;" target="_blank">
-                    Colonialism
-                </a>
-                –
-                <a href="https://id.wikipedia.org/wiki/Undang-Undang_Agraria_1870" style="font-weight: bold; font-style: italic;" target="_blank">
-                    1870 Agrarian Law (Agrarische Wet)
-                </a>
-                &
-                <a href="https://id.wikipedia.org/wiki/Undang-Undang_Gula_1870" style="font-weight: bold; font-style: italic;" target="_blank">
-                    Suiker Wet
-                </a>
-                – many private firms (sugar, etc) – society adapts & new culture (<strong>Manten Tebu</strong>)
-                – shows colonialism influenced Indonesian social institutions by shaping the new
-                <a href="https://en.wikipedia.org/wiki/Tradition" style="font-weight: bold; font-style: italic;" target="_blank">
-                    tradition
-                </a>.
-            </p>
-
-            
-            <h2>What is Manten Tebu?</h2>
-            <div class="image-box">
-                <img src="https://i.ibb.co.com/JW9CP5Jy/Whats-App-Image-2025-04-14-at-12-03-56-jpeg.webp" 
-                     alt="Whats-App-Image-2025-04-14-at-12-03-56-jpeg">
+    <section id="info">
+        <p>
+        <h2> </h2>
+    
+        <!-- Colonialism -->
+        <span class="link-preview">
+            <a href="https://en.wikipedia.org/wiki/Colonialism" target="_blank">
+                <strong><em>Colonialism</em></strong>
+            </a>
+            <div class="preview-box">
+                Wikipedia: Overview of Colonialism<br>
+                <small>Open</small>
             </div>
-            <p>
-                The tradition of Manten Tebu is a ritual in which sugarcane stalks are symbolically married before the milling season, 
-                offering a compelling example of how societies respond to structural change by creating new cultural practices. 
-                Emerging during the colonial expansion of sugar plantations.
-            </p>
+        </span>
 
-            <h2>What's the government's reaction to Manten Tebu?</h2>
+        ,
 
-            <p>The government opened up plantation management rights to the private sector with the enactment of the Sugar Act (Suiker Wet) and the Agrarian Act (Agrarische Wet) in 1870, 
-                which caused European entrepreneurs began arriving in the Dutch East Indies to invest their capital, 
-                lease agricultural land from the local population for sugar cane plantations, and establish sugar factories.
-            </p>
-
-            <h2>Furthermore about Manten Tebu</h2>
-
-            <p>
-                In Java, manten tebu illustrates the dynamic relationship between imposed economic systems and the adaptive capacities of local social institutions. 
-                By analyzing this ritual through the sociological lenses of economic, religious, and family institutions, as well as functionalist, conflict, and interactionist perspectives, 
-                we can understand how new traditions form as a creative negotiation between external pressures and internal cultural continuity.
-            </p>
-            <div class="image-box">
-                <img src="https://i.ibb.co.com/RkDFCCPC/unnamed-6.jpg" 
-                     alt="unnamed-6.jpg">
+        <!-- Agrarian Law -->
+        <span class="link-preview">
+            <a href="https://id.wikipedia.org/wiki/Undang-Undang_Agraria_1870" style="font-weight:bold; font-style:italic;" target="_blank">
+                1870 Agrarian Law (Agrarische Wet)
+            </a>
+            <div class="preview-box">
+                Wikipedia: UU Agraria 1870 (Colonial land policy)<br>
+                <small>Open</small>
             </div>
+        </span>
 
-            <h2>The meaning behind Manten Tebu</h2>
-            <p>
-                The Manten Tebu ritual is a means of discipline, with the sugar factory owners wielding power and the sugar factory workers being disciplined. 
-                Through this ritual, workers are conditioned to work harder, and the harder they work, the more profit the sugar factory owners will make. 
-                Machines are a product of technological development that represent a new experience for the Javanese people. The presence of these machines sometimes causes fear among workers.
-                This is understandable, given that many factory machines are large and made of heavy metal, posing a high risk of accidents. 
-                Fear of these factory machines is still evident in the oral traditions that have developed in communities, especially those around sugar factories. 
-                In addition to stories, this fear of workplace accidents is also manifested in symbols, such as when a sugar cane bride, or Manten Tebu, is put into a milling machine as an offering so that the milling machine will not claim any human victims.
-            </p>
-            
-        </section>
+        &
 
-        <section id="pictures">
-            <h2>Pictures</h2>
-
-            <div class="image-container">
-                <img src="https://i.ibb.co.com/qYXtqV81/unnamed-3.jpg" alt="First Image">
-                <img src="image2.jpg" alt="Second Image">
-                <img src="image3.jpg" alt="Third Image">
+        <!-- Suiker Wet -->
+        <span class="link-preview">
+            <a href="https://id.wikipedia.org/wiki/Undang-Undang_Gula_1870" style="font-weight:bold; font-style:italic;" target="_blank">
+                Suiker Wet
+            </a>
+            <div class="preview-box">
+                Wikipedia: UU Gula 1870 (Colonial sugar regulation)<br>
+                <small>Open</small>
             </div>
-        </section>
+        </span>
 
-        <footer>
-            <p>&copy; 2025 Dadarzz</p>
-        </footer>
+        – many private firms (sugar, etc) – society adapts & new culture (<strong>Manten Tebu</strong>) – shows colonialism influenced Indonesian social institutions by shaping the new 
 
-    </div>
+        <!-- Tradition -->
+        <span class="link-preview">
+            <a href="https://en.wikipedia.org/wiki/Tradition" style="font-weight:bold; font-style:italic;" target="_blank">
+                tradition
+            </a>
+            <div class="preview-box">
+                Wikipedia: Definition of Tradition<br>
+                <small>Click to open</small>
+            </div>
+        </span>.
+        </p>
 
+        <h2>What is Manten Tebu?</h2>
+        <div class="image-box">
+            <img src="https://i.ibb.co.com/JW9CP5Jy/Whats-App-Image-2025-04-14-at-12-03-56-jpeg.webp" 
+                 alt="Whats-App-Image-2025-04-14-at-12-03-56-jpeg">
+        </div>
+        <p>
+            The tradition of Manten Tebu is a ritual in which sugarcane stalks are symbolically married before the milling season, 
+            offering a compelling example of how societies respond to structural change by creating new cultural practices. 
+            Emerging during the colonial expansion of sugar plantations.
+        </p>
+
+        <h2>What's the government's reaction to Manten Tebu?</h2>
+        <p>
+            The government opened up plantation management rights to the private sector with the enactment of the Sugar Act (Suiker Wet) and the Agrarian Act (Agrarische Wet) in 1870, 
+            which caused European entrepreneurs began arriving in the Dutch East Indies to invest their capital, 
+            lease agricultural land from the local population for sugar cane plantations, and establish sugar factories.
+        </p>
+
+        <h2>Furthermore about Manten Tebu</h2>
+        <p>
+            In Java, manten tebu illustrates the dynamic relationship between imposed economic systems and the adaptive capacities of local social institutions. 
+            By analyzing this ritual through the sociological lenses of economic, religious, and family institutions, as well as functionalist, conflict, and interactionist perspectives,
+             we can understand how new traditions form as a creative negotiation between external pressures and internal cultural continuity.
+        </p>
+
+        <div class="image-box">
+            <img src="https://i.ibb.co.com/RkDFCCPC/unnamed-6.jpg" alt="unnamed-6.jpg">
+        </div>
+
+        <h2>The meaning behind Manten Tebu</h2>
+        <p>
+            The Manten Tebu ritual is a means of discipline, with the sugar factory owners wielding power and the sugar factory workers being disciplined. 
+            Through this ritual, workers are conditioned to work harder, and the harder they work, the more profit the sugar factory owners will make.
+             Machines are a product of technological development that represent a new experience for the Javanese people. 
+             The presence of these machines sometimes causes fear among workers. This is understandable,
+              given that many factory machines are large and made of heavy metal, posing a high risk of accidents.
+               Fear of these factory machines is still evident in the oral traditions that have developed in communities, 
+               especially those around sugar factories. In addition to stories, this fear of workplace accidents is also manifested in symbols, such as when a sugar cane bride, 
+               or Manten Tebu, is put into a milling machine as an offering so that the milling machine will not claim any human victims.
+        </p>
+
+    </section>
+
+    <section>
+        <h2>Connecting with Historical & Sociological Theories</h2>
+        <p><em>Manten Tebu</em> reflects how colonial economic structures reshaped local culture and labor.
+             The introduction of large-scale sugarcane plantations by the colonizers reorganized agricultural practices, labor routines, and the livelihoods of local communities.
+              The communities did not respond passively, but embedding the new system into their cultural rhythms through rituals. 
+              Symbolically, the culture of sugar cane cultivation placed industrial agriculture within a familiar cultural narrative,
+               demonstrating a sociological process whereby economic change produces cultural adaptation, allowing communities to adapt externally imposed labour systems in meaningful ways.
+        </p>
+
+        <p>
+            The ritual also has a strong connection with the religious institution.
+             Javanese spiritual traditions emphasize harmony between humans, nature, and unseen forces.
+              By performing a “marriage” between two sugarcane stalks, farmers symbolically ensure fertility, protection, and balance for the harvest. 
+              This put together of animistic and religious beliefs with a colonial-era crop. According to <a href="#ref-hijam" class="cite">Hijam, (2025)</a>
+            , this is called cultural hybridization, 
+              in which local religious meanings are influenced by external economic systems. Through this hybrid ritual, the community re-sacralizes an economic commodity, 
+              reiterating a spiritual worldview even within the constraints of a colonial industrial system.
+        </p>
+
+        <p>
+            In addition, Manten Tebu creatively borrows symbolic elements from the family institution.
+             Marriage rituals normally represent unity, continuity, and cooperation among families.
+              By transferring this symbolism to agricultural production, the community elevates sugarcane from a mere crop to a socially meaningful entity. 
+              This reflects a process known as institutional transfer <a href="#ref-wagener" class="cite">(Wagener, 2019)</a>
+            , where the logic of one institution (family) is used to structure practices in another (economy). 
+              The use of marriage symbolism not only humanizes the crop but also embeds economic labor within a moral and emotional framework rooted in family values and social unity.
+        </p>
+
+        <p>
+            From a functionalist perspective <a href="#ref-britannica" class="cite">(Britannica, 2024)</a>
+            , Manten Tebu helps restore social stability during a period of disruption.
+             Colonial plantations transformed local life, creating uncertainty and dislocation. The ritual provided a sense of order, collective identity, and emotional reassurance, 
+             reinforcing cohesion at the community level. In this sense, Manten Tebu operates as a social mechanism that reduces anxiety and maintains continuity. 
+        </p>
+
+        <p>
+            From a conflict theory, the ritual can be interpreted as a subtle form of cultural resistance. 
+            Although the colonial economy imposed sugarcane production, local people reasserted agency by embedding their own values and beliefs into the production process.
+             The ritual transforms a symbol of colonial control (the plantation crop) into a symbol of local cultural authority. 
+             This demonstrates how dominated groups may respond to structural power through symbolic resistance rather than open confrontation.
+        </p>
+
+        <p>
+            From a Marxist perspective <a href="#ref-marxism" class="cite">(McLellan & Chambre, 2018)</a>
+            , Manten Tebu can be understood as a cultural response to colonial capitalist exploitation.
+             Sugarcane plantations operated as part of the colonial mode of production, in which local labour was exploited to generate profits for the colonial elite.
+              This ritual, reflects how the community symbolically reclaimed power in an unequal economic system by imbuing cultural meaning into a commodity shaped by capitalist exploitation.
+               The ‘marriage’ of sugarcane becomes an alternative ideological narrative to labour alienation: instead of viewing sugar cane as merely a product of colonial profit, 
+               the community restores its sacredness as a source of collective identity and spiritual value. This demonstrates how cultural rituals can function as a form of ideological resistance, 
+               enabling marginalised groups to mitigate the psychological and social impact of exploitative labour relations imposed by colonial capitalism.
+        </p>
+
+        <p>
+            Finally, symbolic interactionism reveals how new traditions form through collective meaning-making. Individuals and communities reinterpret sugarcane not just as a crop but as a social symbol worthy of ritual attention. 
+            Through shared interactions preparing the ceremony, performing the procession, narrating the meaning the community constructs a shared definition of the situation. Over time, these shared meanings solidify into a recognizable tradition.
+             What begins as a practical adaptation becomes a culturally significant social ritual.
+        </p>
+    </section>
+
+    <section>
+        <h2>In Conclusion</h2>
+
+        <p>
+            <em>Manten Tebu</em> symbolized the formation of new traditions arising from the interaction between external systems and internal cultural institutions. The ritual synthesizes elements of the economic, 
+            religious, and family institutions while fulfilling functional, symbolic, and resistant roles within society. Its emergence demonstrates how communities actively negotiate colonial influence: not through passive acceptance,
+             but through the creation of meaningful cultural practices that protect identity, restore social order, and reinterpret imposed systems on their own terms. Through a sociological lens, 
+             Manten Tebu stands as a clear illustration of how societies respond to structural change by producing new traditions that bridge old values and new realities.
+        </p>
+    </section>
+
+    <section>
+        <h2>Funfacts</h2>
+        <li>
+            All stages in the sugar cane harvesting process are crucial because they affect the safety and success of the milling process and the productivity of the factory. 
+            If this ceremony is not carried out, there will be obstacles, such as the factory machines jamming or suddenly breaking down. The wayang also has an impact. 
+            The source stated that when the wayang performance was not held in 2020, the milling results were not profitable. It was only when the wayang performance resumed in 2022 that the results became more profitable.
+        </li>
+
+        <li>
+          Some sugar factories allowed workers to use part of the land to build their homes. However, this did not eliminate the workers' difficulties because such living conditions, 
+          coupled with long working hours, created a social environment and a command-based work system that prevented workers from living as they would in an organic rural environment.
+           Some factories even offered opium to the workers.  
+        </li>
+
+        <li>
+            <i>“Tahun-tahun sebelumnya itu ada patung kayu berbentuk manusia, nanti waktu mau proses giling akan diolesi dengan darah, entah itu darah manusia atau darah hewan,
+             kalau dilihat dari zaman sepertinya darah hewan, kemudian patung kayu tadi dimasukkan ke mesin giling, sebagai persembahan, dahulu dengar-dengar pernah tuh manusia masuk ke mesin gilingnya entah itu kecelakaan dalam bekerja.” 
+            </i> (Interview with the informant, 16 July 2022)
+        </li>
+    </section>
+    <section>
+        <h2>References</h2>
+
+        <!-- Wagener -->
+        <div class="ref-item" id="ref-wagener">
+            <span class="ref-preview">
+                <a href="https://doi.org/10.1093/oso/9780198829911.003.0054" target="_blank">
+                    Wagener, H.-J. (2019). Institutional transfer. 
+                    <i>Oxford University Press EBooks</i>, 526–530. 
+                    https://doi.org/10.1093/oso/9780198829911.003.0054
+                </a>
+                <div class="ref-box">
+                    Book chapter discussing institutional transfer across societies.<br>
+                    <small>Open Source</small>
+                </div>
+            </span>
+        </div>
+
+        <!-- Britannica Functionalism -->
+        <div class="ref-item" id="ref-britannica">
+            <span class="ref-preview">
+                <a href="https://www.britannica.com/topic/functionalism-social-science" target="_blank">
+                    Britannica. (2024). Functionalism | social science. 
+                    In <i>Encyclopedia Britannica</i>. 
+                    https://www.britannica.com/topic/functionalism-social-science
+                </a>
+                <div class="ref-box">
+                    Encyclopedia entry explaining functionalist theory.<br>
+                    <small>View Article</small>
+                </div>
+            </span>
+        </div>
+
+        <!-- Marxism -->
+        <div class="ref-item" id="ref-marxism">
+            <span class="ref-preview">
+                <a href="https://www.britannica.com/topic/Marxism" target="_blank">
+                    McLellan, D., & Chambre, H. (2018). Marxism. 
+                    In <i>Encyclopaedia Britannica</i>. 
+                    https://www.britannica.com/topic/Marxism
+                </a>
+                <div class="ref-box">
+                    Overview of Marxist theory and development.<br>
+                    <small>Visit Britannica</small>
+                </div>
+            </span>
+        </div>
+
+        <!-- Hijam -->
+        <div class="ref-item" id="ref-hijam">
+            <span class="ref-preview">
+                <a href="https://doi.org/10.2139/ssrn.5203250" target="_blank">
+                    Hijam, G. (2025). Cultural hybridity. 
+                    <i>SSRN Electronic Journal</i>. 
+                    https://doi.org/10.2139/ssrn.5203250
+                </a>
+                <div class="ref-box">
+                    Paper explaining cultural hybridity in global contexts.<br>
+                    <small>Open PDF</small>
+                </div>
+            </span>
+        </div>
+
+        <!-- Abdila et al. -->
+        <div class="ref-item" id="ref-abdila">
+            <span class="ref-preview">
+                <a href="https://doi.org/10.22146/la.16424" target="_blank">
+                    Abdila, A., Rahman, I. N., Setiawan, A. W., & Firmonasari, A. (2024). 
+                    Transformasi makna ritus manten tebu dalam program pemajuan kebudayaan nasional. 
+                    <i>Lembaran Antropologi</i>, 3(2), 165–183. 
+                    https://doi.org/10.22146/la.16424
+                </a>
+                <div class="ref-box">
+                    Journal study on the transformation of the Manten Tebu ritual.<br>
+                    <small>Read Journal</small>
+                </div>
+            </span>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <p>&copy; 2025 Dadarzz</p>
+    </footer>
+
+</div>
+    
 </body>
 </html>
-
-
